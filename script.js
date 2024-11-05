@@ -9,18 +9,18 @@ function hideSidebar() {
 }
 
 const memberships = [
-    { name: "Junior", desc: "Our Junior Membership offers unlimited access to all kids’ martial arts classes for the month, where young warriors build confidence, learn self-defense, and improve fitness in a fun, supportive environment. Empower your child with skills that last a lifetime!", price: "$25.00/month" },
-    { name: "Basic", desc: "1 martial art - 2 sessions per week", price: "$25.00/month" },
-    { name: "Intermediate", desc: "1 martial art - 3 sessions per week", price: "$35.00/month" },
-    { name: "Advanced", desc: "Any 2 martial arts - 5 sessions per week", price: "$45.00/month" },
-    { name: "Elite", desc: "Unlimited classes", price: "$60.00/month" },
-    { name: "Private Martial Arts", desc: "Any martial arts", price: "$15.00/hour" },
-    { name: "Self-defense Course", desc: "6-week course - 1 hour x 2 sessions per week", price: "$180.00" },
-    { name: "Fitness Room Use", desc: "Per visit fee", price: "$6.00/visit" },
-    { name: "Personal Fitness Training", desc: "Bob", price: "$35.00/hour" },
+    { name: "Junior", desc: "Our Junior Membership offers unlimited access to all kids’ martial arts classes for the month, where young warriors build confidence, learn self-defense, and improve fitness in a fun, supportive environment. Empower your child with skills that last a lifetime!", price: "£25.00/month" },
+    { name: "Basic", desc: "Our Basic Membership provides focused training in one martial art style with two sessions per week, giving you the perfect balance of skill-building, self-defense, and fitness over the course of the month. Ideal for beginners and those looking to strengthen their foundations!", price: "£25.00/month" },
+    { name: "Intermediate", desc: "The Intermediate Membership offers dedicated training in one martial art style with three sessions per week, helping you sharpen your skills, improve fitness, and gain deeper mastery over the course of a month. Perfect for those ready to take their practice to the next level!", price: "£35.00/month" },
+    { name: "Advanced", desc: "Our Advanced Membership unlocks access to two martial arts styles with five sessions per week, providing intensive training, advanced techniques, and enhanced fitness for those committed to mastering their craft. Achieve peak performance and elevate your skills all month long!", price: "£45.00/month" },
+    { name: "Elite", desc: "The Elite Membership grants you unlimited access to all martial arts classes for the entire month, allowing you to train as much as you want across any style. Ideal for dedicated practitioners aiming for comprehensive skill development, peak fitness, and mastery without limits!", price: "£60.00/month" },
+    { name: "Private Martial Arts", desc: "Our Private Martial Arts Sessions offer personalized, one-on-one training by the hour, tailored to your specific goals and skill level. Perfect for targeted improvement, focused technique refinement, or a customized approach to martial arts and self-defense!", price: "£15.00/hour" },
+    { name: "Self-defense Course", desc: "Our Six-Week Self-Defense Course provides two one-hour sessions per week, equipping you with essential self-defense skills and strategies for real-world situations. Gain confidence, improve awareness, and learn effective techniques in just six weeks!", price: "£180.00" },
+    { name: "Fitness Room Use", desc: "Our Fitness Room Access allows you to use our state-of-the-art fitness area with a convenient per-visit fee. Perfect for those looking to boost their fitness routine with high-quality equipment and a motivating atmosphere, no commitment needed!", price: "£6.00/visit" },
+    { name: "Personal Fitness Training", desc: "Our Hourly Fitness Training sessions with a personal trainer offer customized workouts tailored to your individual goals and fitness level. Experience personalized guidance and support to maximize your results, all while enjoying one-on-one attention for the ultimate fitness experience!", price: "£35.00/hour" },
 ]
 
-let currentIndex = 1
+let currentIndex = 0
 
 const membershipName = document.getElementById("membershipName")
 const membershipDesc = document.getElementById("membershipDesc")
@@ -36,32 +36,28 @@ displayMembershipInfo(currentIndex)
 
 function nextMembership() {
     currentIndex = (currentIndex + 1) % memberships.length
-    animateCarousel("next")
-    //setTimeout(() => displayMembershipInfo(currentIndex), 500)
+    //animateCarousel("next")
+    displayMembershipInfo(currentIndex)
 }
 
 function prevMembership() {
     currentIndex = (currentIndex - 1 + memberships.length) % memberships.length
-    animateCarousel("previous")
-    //setTimeout(() => displayMembershipInfo(currentIndex), 500)
+    //animateCarousel("previous")
+    displayMembershipInfo(currentIndex)
 }
 
-function animateCarousel(direction) {
-    membershipName.classList.remove("slide-left", "slide-right")
-    membershipPrice.classList.remove("slide-left", "slide-right")
-    membershipDesc.classList.remove("active")
+function openHourlySchedule(day) {
+    const wholeDay = day.closest(".schedule-card")
+    const hourlySchedule = wholeDay.querySelector(".hourly-schedule");
 
-    if (direction === "next") {
-        membershipName.classList.add("slide-left")
-        membershipPrice.classList.add("slide-right")
+    // Toggle visibility by changing display and max-height
+    if (hourlySchedule.style.display === 'none' || hourlySchedule.style.display === '') {
+        hourlySchedule.style.display = 'block';  // Show the bottom div
+        hourlySchedule.style.maxHeight = hourlySchedule.scrollHeight + "px";  // Expand it smoothly
     } else {
-        membershipName.classList.add("slide-right")
-        membershipPrice.classList.add("slide-left")
+        hourlySchedule.style.maxHeight = '0';  // Collapse it smoothly
+        setTimeout(() => {
+            hourlySchedule.style.display = 'none';  // Hide the bottom div after collapsing
+        }, 300);  // Wait for the transition to complete before hiding
     }
-
-    //setTimeout(() => {
-    //    membershipDesc.classList.add("active")
-    //}, 200)
 }
-
-

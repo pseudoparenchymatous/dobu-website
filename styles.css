@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap');
 
-/*
-COLORS
-#f5f5f5
-#d94141
-#2d2d2d
-*/
-
 * {
     padding: 0;
     margin: 0;
@@ -28,13 +21,25 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
 
+h1 {
+    font-size: 4rem;
+}
+
 h2 {
+    font-size: 3rem;
+}
+
+h3 {
     font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
 }
 
 p {
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 header {
@@ -54,11 +59,6 @@ nav {
     align-items: center;
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.5rem;
-    /*background: linear-gradient(*/
-    /*    to bottom,*/
-    /*    #f5f5f5ff,*/
-    /*    #f5f5f500*/
-    /*);*/
 }
 
 #logo-link {
@@ -94,11 +94,15 @@ nav a:hover {
     color: #d94141;
 }
 
+nav button {
+    border: none;
+}
+
 #sidebar-button {
     display: none;
 }
 
-@media (width < 800px) {
+@media (width < 820px) {
     .nav-list {
         display: none;
     }
@@ -168,7 +172,6 @@ video {
     font-family: "Bebas Neue", sans-serif;
     word-spacing: 100vw;
     text-align: center;
-    font-size: 4em;
     line-height: 1.5;
 }
 
@@ -217,7 +220,6 @@ section {
 }
 
 section h2 {
-    font-size: 2.5rem;
     margin: 10px;
 
     @media (width < 500px) {
@@ -233,8 +235,8 @@ section h2 {
 .program-cards {
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+    justify-content: center;
     gap: 20px;
     width: 100%;
 }
@@ -257,8 +259,7 @@ section h2 {
     filter: brightness(0.6);
 }
 
-.program-card h4 {
-    font-size: 2.5rem;
+.program-card h3 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -269,7 +270,7 @@ section h2 {
     transition: transform 500ms ease;
 }
 
-.program-card:hover h4 {
+.program-card:hover h3 {
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -341,9 +342,6 @@ section h2 {
     text-align: center;
 }
 
-.active .membership-description {
-}
-
 .membership-price {
     padding: 10px;
     grid-area: membershipPrice;
@@ -368,65 +366,248 @@ section h2 {
     grid-area: membershipPrice;
 }
 
-.days {
+.schedule-cards {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
-    
+    gap: 10px;
 }
 
-.day-card {
+.schedule-card {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    max-height: 2rem;
-    padding: 20px;
-    border-radius: 5px;
-    transition: max-height 700ms ease;
-    background-color: aquamarine;
-    overflow: hidden;
+}
+
+.schedule-card span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+}
+
+.schedule-header {
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    background-color: #d94141;
+    color: #f5f5f5;
     cursor: pointer;
 }
 
-.day-card h3 {
-    font-size: 16px;
-}
-
-.day-card .hourly-sched {
+.hourly-schedule {
+    width: auto;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: #2d2d2d;
+    color: #f5f5f5;
+    transition: max-height 300ms ease-in-out;
     display: none;
-    font-size: 16px;
 }
 
-.day-card:hover {
-    max-height: 400px;
-}
-
-.day-card:hover .hourly-sched {
-    display: block;
+.hourly-schedule span {
+    color: #d94141;
 }
 
 #about {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content {
     display: grid;
+    place-items: center;
+    padding: 10px 20px;
 }
 
 #about > h2 {
+    width: 100%;
+    height: 80px;
     margin: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #d94141;
-    color: #2d2d2d;
+    color: #000000;
+}
+
+@media (width > 450px) {
+    .about-content h3 {
+        justify-self: start;
+    }
+}
+
+.about-content p {
+    max-width: 75ch;
+    line-height: 2rem;
+}
+
+.about-team {
+    display: grid;
+    grid-template-rows: auto minmax(300px, 1fr) 30px;
+    gap: 20px;
+    height: 90vh;
 }
 
 #teamProfiles {
+    padding: 20px;
+    place-self: center;
+    height: 100%;
+    width: 80vw;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    gap: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
-#teamProfiles h4 {
-    color: red;
+.team-profile {
+    aspect-ratio: 9/16;
+    border-radius: 10px;
+    position: relative;
+    color: #f5f5f5;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.21);
+}
+
+.team-profile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 50%);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.team-profile img {
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.instructor-details {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    transition: transform 200ms ease;
+    z-index: 2;
+}
+
+.team-profile ul {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 500ms ease, maxheight 500ms ease;
+}
+
+.team-profile li {
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5rem;
+}
+
+.team-profile:hover .instructor-details {
+    transform: translateY(-30px);
+}
+
+.team-profile:hover ul {
+    opacity: 1;
+    max-height: 100px;
+}
+
+#contact {
+    padding: 0;
+    display: flex;
+    @media (width < 850px) {
+        flex-direction: column;
+    }
+}
+
+.train-form {
+    padding: 20px;
+    background-color: #d94141;
+    color: #f5f5f5;
+}
+
+.train-form button {
+    background-color: #2d2d2d;
+    color: #f5f5f5;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    @media (width < 480px) {
+        flex-direction: column;
+    }
+}
+
+form * {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+}
+
+form textarea {
+    resize: none;
+}
+
+.contact-info {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2d2d;
+    color: #f5f5f5;
+}
+
+.contact-entry {
+    display: grid;
+    grid-template-areas:
+        "label label"
+        "icon info";
+    place-items: center;
+}
+
+.contact-entry svg {
+    grid-area: icon;
+    color: #d94141;
+}
+
+.contact-entry span {
+    grid-area: label;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+}
+
+.contact-entry p {
+    grid-area: info;
+}
+
+.contact-social {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+}
+.contact-social svg {
+    color: #d94141;
 }
 
 footer {
@@ -435,4 +616,23 @@ footer {
     display: block;
     text-align: center;
     background-color: #2d2d2d;
+}
+
+.copyright {
+    display: grid;
+    place-content: center;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 6rem;
+    background-color: black;
+    color: #f5f5f5;
+}
+
+.copyright a {
+    color: inherit;
+    transition: color 200ms ease;
+}
+
+.copyright a:hover {
+    color: #d94141;
 }
