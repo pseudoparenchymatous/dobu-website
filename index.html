@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <link rel="icon" href="assets/dobu-icon.png">
+  <title>DoBu Martial Arts</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a id="logo-link" href="#"> <img src="assets/dobu-logo-text.png" alt="Dobu Martial Arts Logo" id="logo"> </a>
+      <ul class="nav-list">
+        <li> <a class="nav-link" href="#">Home</a> </li>
+        <li> <a class="nav-link" href="#programs">Programs</a> </li>
+        <li> <a class="nav-link" href="#facilities">Facilities</a> </li>
+        <li> <a class="nav-link" href="#membership">Membership</a> </li>
+        <li> <a class="nav-link" href="#schedule">Schedule</a> </li>
+        <li> <a class="nav-link" href="#about">About Us</a> </li>
+        <li> <a class="nav-link button train-button" href="#contact">Train Now</a> </li>
+      </ul>
+        <button onclick="showSidebar()" id="sidebar-button"> <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path fill="currentColor" d="M32 96v64h448V96zm0 128v64h448v-64zm0 128v64h448v-64z"/></svg> </button>
+        <ul id="side-nav">
+          <li> <button onclick="hideSidebar()"> <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16"><path fill="currentColor" d="m3.5 2.086l4.5 4.5l4.5-4.5L13.914 3.5L9.414 8l4.5 4.5l-1.414 1.414l-4.5-4.5l-4.5 4.5L2.086 12.5l4.5-4.5l-4.5-4.5z"/></svg> </button> </li>
+          <li> <a class="nav-link" href="#">Home</a> </li>
+          <li> <a class="nav-link" href="#programs">Programs</a> </li>
+          <li> <a class="nav-link" href="#facilities">Facilities</a> </li>
+          <li> <a class="nav-link" href="#membership">Membership</a> </li>
+          <li> <a class="nav-link" href="#schedule">Schedule</a> </li>
+          <li> <a class="nav-link" href="#about">About Us</a> </li>
+          <li> <a class="nav-link button train-button" href="#contact">Train Now</a> </li>
+        </ul>
+    </nav>
+    <div class="hero">
+      <video autoplay muted loop>
+        <source src="assets/nunchucks-girl-landscape.mp4" type="video/mp4">
+      </video>
+      <div id="hero-video-overlay"></div>
+      <div id="hero-content">
+        <h1 class="slogan">Where Discipline Meets Excellence</h1>
+        <div class="hero-buttons">
+          <a href="#programs" class="button hero-button tour-button">Take a Tour</a>
+            <a href="#contact" class="button hero-button train-button">Train Now</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="programs">
+      <h2>Programs</h2>
+      <div class="program-cards">
+        <div class="program-card">
+          <img src="./assets/jiu-jitsu.jpg" alt="Jiu-Jitsu">
+          <h3>Jiu-Jitsu</h3>
+        </div>
+        <div class="program-card">
+          <img src="./assets/muay-thai.jpg" alt="Muay Thai">
+          <h3>Muay Thai</h3>
+        </div>
+        <div class="program-card">
+          <img src="./assets/karate.jpg" alt="Karate">
+          <h3>Karate</h3>
+        </div>
+        <div class="program-card">
+          <img src="./assets/judo.jpg" alt="Judo">
+          <h3>Judo</h3>
+        </div>
+        <div class="program-card">
+          <img src="./assets/fitness-training.jpg" alt="Fitness training">
+          <h3>Fitness Training</h3>
+        </div>
+        <div class="program-card">
+          <img src="./assets/self-defense.jpg" alt="Self-defense">
+          <h3>Self-Defense</h3>
+        </div>
+      </div>
+    </section>
+    <section id="facilities">
+      <h2>Facilities</h2>
+      <div class="facility-cards">
+        <div class="facility-card">
+          <img class="facility-image" src="assets/martial-arts-area.jpg" alt="Matted Area">
+          <h3>Matted Area</h3>
+        </div>
+        <div class="facility-card">
+          <img class="facility-image" src="assets/fitness-gym.jpg" alt="Fitness Gym">
+          <h3>Fitness Gym</h3>
+        </div>
+        <div class="facility-card">
+          <img class="facility-image" src="assets/steam-room.jpg" alt="Steam Room">
+          <h3>Steam Room</h3>
+        </div>
+        <div class="facility-card">
+          <img class="facility-image" src="assets/sauna.jpg" alt="Sauna">
+          <h3>Sauna</h3>
+        </div>
+        <div class="facility-card">
+          <img class="facility-image" src="assets/changing-room.jpg" alt="Changing Room">
+          <h3>Changing Rooms</h3>
+        </div>
+        <div class="facility-card">
+          <img class="facility-image" src="assets/shower-room.jpg" alt="Shower">
+          <h3>Shower</h3>
+        </div>
+      </div>
+    </section>
+    <section id="membership">
+      <h2>Membership</h2>
+      <div class="membership-carousel">
+        <button id="carouselPrevButton" class="carousel-button" onclick="prevMembership()"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="M7.222 9.897q3.45-3.461 6.744-6.754a.65.65 0 0 0 0-.896c-.311-.346-.803-.316-1.027-.08Q9.525 5.59 5.796 9.322q-.296.243-.296.574t.296.592l7.483 7.306a.75.75 0 0 0 1.044-.029c.358-.359.22-.713.058-.881a3408 3408 0 0 1-7.16-6.988"/></svg></button>
+        <h3 id="membershipName" class="membership-name"></h3>
+        <p id="membershipDesc" class="membership-description active"></p>
+        <h4 id="membershipPrice" class="membership-price"></h4>
+        <button id="carouselNextButton" class="carousel-button" onclick="nextMembership()"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="m7.053 2.158l7.243 7.256a.66.66 0 0 1 .204.483a.7.7 0 0 1-.204.497q-3.93 3.834-7.575 7.401c-.125.117-.625.408-1.011-.024c-.386-.433-.152-.81 0-.966l7.068-6.908l-6.747-6.759q-.369-.509.06-.939q.43-.43.962-.04"/></svg></button>
+      </div>
+    </section>
+    <section id="schedule">
+      <h2>Schedule</h2>
+      <div class="schedule-cards">
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Monday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>06:00 - 07:30</span>
+            <p>Jiu-Jitsu</p>
+            <span>08:00 - 10:00</span>
+            <p>Muay Thai</p>
+            <span>10:30 - 12:00</span>
+            <p>Private Tuition</p>
+            <span>13:00 - 14:30</span>
+            <p>Open Mat/Personal Practice</p>
+            <span>15:00 - 17:00</span>
+            <p>Kids Jiu-Jitsu</p>
+            <span>17:30 - 19:00</span>
+            <p>Karate</p>
+            <span>19:00 - 21:00</span>
+            <p>Jiu-Jitsu</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Tuesday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>06:00 - 07:30</span>
+            <p>Karate</p>
+            <span>08:00 - 10:00</span>
+            <p>Private Tuition</p>
+            <span>10:30 - 12:00</span>
+            <p>Private Tuition</p>
+            <span>13:00 - 14:30</span>
+            <p>Open Mat/Personal Practice</p>
+            <span>15:00 - 17:00</span>
+            <p>Kids Judo</p>
+            <span>17:30 - 19:00</span>
+            <p>Muay Thai</p>
+            <span>19:00 - 21:00</span>
+            <p>Judo</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Wednesday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>06:00 - 07:30</span>
+            <p>Judo</p>
+            <span>08:00 - 10:00</span>
+            <p>Private Tuition</p>
+            <span>10:30 - 12:00</span>
+            <p>Private Tuition</p>
+            <span>13:00 - 14:30</span>
+            <p>Open Mat/Personal Practice</p>
+            <span>15:00 - 17:00</span>
+            <p>Kids Karate</p>
+            <span>17:30 - 19:00</span>
+            <p>Judo</p>
+            <span>19:00 - 21:00</span>
+            <p>Jiu-Jitsu</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Thursday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>06:00 - 07:30</span>
+            <p>Jiu-Jitsu</p>
+            <span>08:00 - 10:00</span>
+            <p>Private Tuition</p>
+            <span>10:30 - 12:00</span>
+            <p>Private Tuition</p>
+            <span>13:00 - 14:30</span>
+            <p>Open Mat/Personal Practice</p>
+            <span>15:00 - 17:00</span>
+            <p>Kids Jiu-Jitsu</p>
+            <span>17:30 - 19:00</span>
+            <p>Jiu-Jitsu</p>
+            <span>19:00 - 21:00</span>
+            <p>Karate</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Friday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>06:00 - 07:30</span>
+            <p>Muay Thai</p>
+            <span>08:00 - 10:00</span>
+            <p>Jiu-Jitsu</p>
+            <span>10:30 - 12:00</span>
+            <p>Private Tuition</p>
+            <span>13:00 - 14:30</span>
+            <p>Open Mat/Personal Practice</p>
+            <span>15:00 - 17:00</span>
+            <p>Kids Judo</p>
+            <span>17:30 - 19:00</span>
+            <p>Muay Thai</p>
+            <span>19:00 - 21:00</span>
+            <p>Private Tuition</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Saturday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>08:00 - 10:00</span>
+            <p>Private Tuition</p>
+            <span>10:30 - 12:00</span>
+            <p>Judo</p>
+            <span>13:00 - 14:30</span>
+            <p>Karate</p>
+            <span>15:00 - 17:00</span>
+            <p>Muay Thai</p>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="schedule-header" onclick="openHourlySchedule(this)">
+            <h3>Sunday</h3>
+          </div>
+          <div class="hourly-schedule">
+            <span>08:00 - 10:00</span>
+            <p>Private Tuition</p>
+            <span>10:30 - 12:00</span>
+            <p>Karate</p>
+            <span>13:00 - 14:30</span>
+            <p>Judo</p>
+            <span>15:00 - 17:00</span>
+            <p>Jiu-Jitsu</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about-content about-mission">
+        <h3>Our Mission</h3>
+<!--        <img src="assets/about-mission.jpg" alt="Our Mission">-->
+        <p>
+          At Dobu Martial Arts, our mission is to empower individuals of all ages through the transformative practice of martial arts and fitness.
+          We are dedicated to fostering a safe and inclusive environment where members can build confidence, develop discipline, and enhance their physical and mental well-being.
+          Through expert instruction and supportive community engagement, we aim to equip our students with essential self-defense skills and a lifelong love for fitness, ensuring they lead healthier, more empowered lives.
+        </p>
+      </div>
+      <div class="about-content about-story">
+        <h3>Our Story</h3>
+        <p>
+          Founded by passionate martial artists who believe in the profound impact of training on personal growth, DoBu Martial Arts began as a small community hub dedicated to the art of self-defense and fitness.
+          Our founders recognized that martial arts is not just about physical techniques; it’s a way to cultivate resilience, focus, and respect in every aspect of life.
+          Over the years, we’ve grown into a vibrant community, welcoming families, beginners, and seasoned practitioners alike.
+          Our diverse range of classes and programs reflects our commitment to inclusivity, ensuring everyone has the opportunity to learn, grow, and thrive.
+          At Dobu Martial Arts, we’re not just teaching martial arts; we’re building a family that supports each other on the journey to empowerment and excellence.
+        </p>
+      </div>
+      <div class="about-content about-team">
+        <h3>The Team</h3>
+        <div id="teamProfiles">
+          <div class="team-profile">
+            <img src="./assets/team/mauricio-gomez.jpg" alt="Mauricio Gomez">
+            <div class="instructor-details">
+              <h4>Mauricio Gomez</h4>
+              <ul>
+                <li>Coaches in all martial arts</li>
+                <li>4th Dan Blackbelt Judo</li>
+                <li>3rd Dan Blackbelt Jiu-jitsu</li>
+                <li>1st Dan Blackbelt Karate</li>
+                <li>Accredited Muay Thai Coach</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-profile">
+            <img src="./assets/team/sarah-nova.jpg" alt="Sarah Nova">
+            <div class="instructor-details">
+              <h4>Sarah Nova</h4>
+              <ul>
+                <li>5th Dan Karate</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-profile">
+            <img src="./assets/team/guy-victory.jpg" alt="Guy Victory">
+            <div class="instructor-details">
+              <h4>Guy Victory</h4>
+              <ul>
+                <li>2nd Dan Blackbelt Jiu-Jitsu</li>
+                <li>1st Dan Blackbelt Judo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-profile">
+            <img src="./assets/team/morris-davis.jpg" alt="Morris Davis">
+            <div class="instructor-details">
+              <h4>Morris Davis</h4>
+              <ul>
+                <li>Accredited Muay Thai Coach</li>
+                <li>3rd Dan Blackbelt Karate</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-profile">
+            <img src="./assets/team/traci-santiago.jpg" alt="Traci Santiago">
+            <div class="instructor-details">
+              <h4>Traci Santiago</h4>
+              <ul>
+                <li>BSc in Sports Science</li>
+                <li>Qualified in Health and Nutrition</li>
+                <li>Specialises in devising strength and conditioning programs for combat athletes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="team-profile">
+            <img src="./assets/team/harpreet-kaur.jpg" alt="Harpreet Kaur">
+            <div class="instructor-details">
+              <h4>Harpreet Kaur</h4>
+              <ul>
+                <li>BSc in Physiotherapy</li>
+                <li>MSc in Sports Science</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="train-form">
+        <h2>Train Now</h2>
+        <form>
+          <div class="form-field">
+            <label for="fName">First Name</label>
+            <input type="text" name="name" id="fName">
+          </div>
+          <div class="form-field">
+            <label for="lName">Last Name</label>
+            <input type="text" name="name" id="lName">
+          </div>
+          <div class="form-field">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone">
+          </div>
+          <div class="form-field">
+            <label for="membership-form">Membership</label>
+            <select name="membership-form" id="membership-form">
+              <option value="junior">Junior</option>
+              <option value="basic">Basic</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+              <option value="elite">Elite</option>
+              <option value="private-martial-arts">Private Martial Arts</option>
+              <option value="self-defense">Self-defense Course</option>
+              <option value="fitness-room">Fitness Room Use</option>
+              <option value="personal-fitness">Personal Fitness Training</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-entry">
+          <span>Find Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" viewBox="0 0 28 28"><path fill="currentColor" d="M14 2.25A9.75 9.75 0 0 1 23.75 12c0 4.12-2.895 8.61-8.61 13.518a1.75 1.75 0 0 1-2.283-.002l-.378-.328C7.017 20.408 4.25 16.028 4.25 12A9.75 9.75 0 0 1 14 2.25m0 6a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5"/></svg>
+          <p>1234 Elm Street, Springfield, IL 62701, USA</p>
+        </div>
+        <div class="contact-entry">
+          <span>Call Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" viewBox="0 0 512 512"><path fill="currentColor" d="M391 480c-19.52 0-46.94-7.06-88-30c-49.93-28-88.55-53.85-138.21-103.38C116.91 298.77 93.61 267.79 61 208.45c-36.84-67-30.56-102.12-23.54-117.13C45.82 73.38 58.16 62.65 74.11 52a176.3 176.3 0 0 1 28.64-15.2c1-.43 1.93-.84 2.76-1.21c4.95-2.23 12.45-5.6 21.95-2c6.34 2.38 12 7.25 20.86 16c18.17 17.92 43 57.83 52.16 77.43c6.15 13.21 10.22 21.93 10.23 31.71c0 11.45-5.76 20.28-12.75 29.81c-1.31 1.79-2.61 3.5-3.87 5.16c-7.61 10-9.28 12.89-8.18 18.05c2.23 10.37 18.86 41.24 46.19 68.51s57.31 42.85 67.72 45.07c5.38 1.15 8.33-.59 18.65-8.47c1.48-1.13 3-2.3 4.59-3.47c10.66-7.93 19.08-13.54 30.26-13.54h.06c9.73 0 18.06 4.22 31.86 11.18c18 9.08 59.11 33.59 77.14 51.78c8.77 8.84 13.66 14.48 16.05 20.81c3.6 9.53.21 17-2 22c-.37.83-.78 1.74-1.21 2.75a176.5 176.5 0 0 1-15.29 28.58c-10.63 15.9-21.4 28.21-39.38 36.58A67.4 67.4 0 0 1 391 480"/></svg>
+          <p>(+63) 9123 456 789</p>
+        </div>
+        <div class="contact-entry">
+          <span>Mail Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="3rem" viewBox="0 0 24 24"><path fill="currentColor" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"/></svg>
+          <p>example@example.com</p>
+        </div>
+        <div class="contact-social">
+          <span>Follow Us</span>
+          <div class="social-links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 24 24"><path fill="currentColor" d="M21.07 16.17c-.34-.93-2.4-1.06-3.36-3.19c-.06-.16-.05-.27.11-.37c.74-.49 1.26-.76 1.56-1.33c.22-.41.25-.89.08-1.33c-.23-.61-.81-1-1.52-1c-.25 0-.45.05-.55.07c.01-.42 0-.86-.04-1.3c-.13-1.53-.67-2.34-1.23-2.98C15.79 4.37 14.48 3 12 3S8.21 4.37 7.88 4.74c-.56.64-1.1 1.45-1.23 2.98c-.03.44-.04.88-.04 1.3c-.11-.03-.3-.07-.55-.07c-.7 0-1.29.38-1.52 1c-.17.43-.14.92.08 1.33c.31.58.82.84 1.56 1.33c.16.11.17.21.11.37c-.97 2.13-3.02 2.26-3.36 3.19c-.15.4-.05.85.32 1.23c.57.59 1.63.77 1.84.91c.17.14.15.56.63.9c.38.26.8.28 1.25.29c1.31.05 1.6.27 2.1.58c.63.39 1.49.92 2.93.92s2.3-.53 2.93-.92c.5-.31.79-.53 2.1-.58c.45-.02.87-.03 1.25-.29c.49-.34.47-.76.63-.9c.21-.14 1.27-.32 1.84-.91c.37-.38.47-.83.32-1.23m-1.03.53c-.37.39-1.26.5-1.73.82c-.48.42-.4.74-.59.87c-.13.09-.36.1-.72.12c-1.4.05-1.91.31-2.52.69c-1.43.88-2.23.8-2.48.8s-1.05.08-2.47-.81c-.61-.38-1.11-.63-2.52-.69c-.36-.01-.59-.03-.72-.12c-.19-.13-.12-.45-.59-.87c-.48-.32-1.36-.43-1.73-.82c-.06-.06-.11-.14-.12-.15c.07-.1.41-.3.66-.44c.78-.46 1.98-1.14 2.71-2.75c.26-.7.03-1.26-.48-1.59c-1.15-.73-1.13-.76-1.24-.96a.62.62 0 0 1-.03-.5c.12-.32.45-.35.58-.35c.19 0 .18.01 1.57.37c-.02-1.4-.04-1.85.02-2.51c.11-1.31.57-1.93.98-2.4C8.9 5.11 9.99 3.98 12 4c2.01-.02 3.1 1.11 3.37 1.41c.41.47.87 1.09.98 2.4c.06.66.04 1.11.02 2.51c1.4-.36 1.38-.37 1.57-.37c.14 0 .46.03.58.35c.07.17.06.35-.03.5c-.11.2-.09.22-1.23.97c-.51.33-.74.89-.48 1.59c.73 1.61 1.93 2.29 2.71 2.75c.25.15.59.34.66.44c0 .01-.06.09-.11.15"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      <p>Copyright © 2024, All Rights Reserved by <a href="https://www.github.com/pseudoparenchymatous">Georey Saliente</a></p>
+    </div>
+  </footer>
+</body>
+</html>
