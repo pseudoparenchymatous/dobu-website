@@ -500,17 +500,21 @@ section p {
 }
 
 .about-team {
+    padding: 0;
     display: grid;
     grid-template-rows: auto minmax(300px, 1fr) 30px;
     gap: 20px;
     height: 90vh;
 }
 
+.about-team h3 {
+    padding: 0 20px;
+}
+
 #teamProfiles {
-    padding: 20px;
-    place-self: center;
+    padding: 20px 0;
     height: 100%;
-    width: 80vw;
+    width: 100%;
     position: relative;
     display: flex;
     gap: 30px;
