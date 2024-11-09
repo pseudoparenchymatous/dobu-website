@@ -555,7 +555,7 @@ section h2 {
 .team-profile ul {
     opacity: 0;
     max-height: 0;
-    transition: opacity 500ms ease, maxheight 500ms ease;
+    transition: opacity 500ms ease, max-height 500ms ease;
 }
 
 .team-profile li {
@@ -570,7 +570,7 @@ section h2 {
 
 .team-profile:hover ul {
     opacity: 1;
-    max-height: 100px;
+    max-height: 200px;
 }
 
 #contact {
