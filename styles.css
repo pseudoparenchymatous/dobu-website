@@ -95,6 +95,7 @@ nav a:hover {
 
 nav button {
     border: none;
+    cursor: pointer;
 }
 
 #sidebar-button {
