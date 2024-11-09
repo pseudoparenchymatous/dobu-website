@@ -472,6 +472,7 @@ section p {
 }
 
 .about-content {
+    width: 100%;
     display: grid;
     place-items: center;
     padding: 10px 20px;
