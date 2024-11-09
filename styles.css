@@ -590,7 +590,10 @@ section p {
 }
 
 .train-form {
+    width: 100%;
     padding: 20px;
+    display: grid;
+    place-items: center;
     background-color: #d94141;
     color: hsl(0, 0%, 0%);
 }
@@ -604,6 +607,7 @@ section p {
 }
 
 form {
+    max-width: 480px;
     padding: 20px;
     display: flex;
     flex-direction: column;
