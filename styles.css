@@ -39,7 +39,7 @@ h4 {
 p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 2rem;
 }
 
 header {
@@ -499,7 +499,6 @@ section p {
 
 .about-content p {
     max-width: 75ch;
-    line-height: 2rem;
 }
 
 .about-team {
