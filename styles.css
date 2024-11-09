@@ -39,6 +39,7 @@ h4 {
 p {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 header {
@@ -217,26 +218,30 @@ video {
 
 section {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section h2 {
     margin: 10px;
-
-    @media (width < 500px) {
-        text-align: center;
+    @media (width > 420px) {
+        align-self: flex-start;
     }
 }
 
-#programs {
-    display: flex;
-    flex-direction: column;
+section p {
+    padding: 10px;
+    max-width: 75ch;
+    text-align: center;
 }
 
 .program-cards {
+    width: 100%;
     padding: 10px;
     display: grid;
-    gap: 20px;
     grid-template-columns: repeat(auto-fit, clamp(30ch, 30%, 75ch));
+    gap: 20px;
     justify-content: center;
 }
 
