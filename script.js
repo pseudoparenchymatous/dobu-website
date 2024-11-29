@@ -55,3 +55,45 @@ function openHourlySchedule(day) {
         hourlySchedule.style.display = 'none';  // Hide the bottom div after collapsing
     }
 }
+
+document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission to the server
+
+    // Form field references
+    const fName = document.getElementById("fName").value.trim();
+    const lName = document.getElementById("lName").value.trim();
+    const birthday = document.getElementById("birthday").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const membership = document.getElementById("membership-form").value;
+    const message = document.getElementById("message").value.trim();
+
+    // Validation checks
+    if (!fName) {
+        alert("Please enter your first name.");
+        return;
+    }
+    if (!lName) {
+        alert("Please enter your last name.");
+        return;
+    }
+    if (!birthday) {
+        alert("Please select your birthday.");
+        return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    if (!phone || !/^\d+$/.test(phone)) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+    if (!membership) {
+        alert("Please select a membership type.");
+        return;
+    }
+
+    // All checks passed
+    alert("Form submitted successfully");
+});
